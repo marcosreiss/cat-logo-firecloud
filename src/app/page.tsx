@@ -8,14 +8,14 @@ import "swiper/css/autoplay";
 
 export default function Home() {
   const brands: string[] = [
-    "/brands/bem_bolado.webp",
-    "/brands/la_revolucion.webp",
-    "/brands/logo_aleda.webp",
-    "/brands/cremaria.webp",
-    "/brands/papelito.webp",
-    "/brands/smoking_master.webp",
-    "/brands/tatu_do_bem.webp",
-    "/brands/to_na_be_.webp",
+    "/brands/logo_papelito.webp",
+    "/brands/logo_larevolucion.webp",
+    "/brands/logo_smoking_master.webp",
+    "/brands/logo_cremaria.webp",
+    "/brands/logo_bem_bolado.webp",
+    "/brands/logo_tatu_do_bem.webp",
+    "/brands/logo_aleda03.webp",
+    "/brands/logo_to_na_be.webp",
   ];
 
   return (
