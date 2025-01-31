@@ -1,4 +1,5 @@
-import { Container } from "@mui/material";
+"use client";
+import { Box, Container } from "@mui/material";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react"; // Faltava importar SwiperSlide
@@ -27,19 +28,27 @@ export default function Home() {
         style={{ margin: "auto" }}
       />
 
-      <Swiper
-        spaceBetween={10}
-        slidesPerView={1}
-        loop={true}
-        autoplay={{ delay: 2000, disableOnInteraction: false }}
-        modules={[Autoplay]}
-      >
-        {brands.map((src, index) => (
-          <SwiperSlide key={index}>
-            <Image src={src} alt={`Logo ${index}`} width={200} height={100} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <Box mt={6}>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView="auto"
+          loop={true}
+          speed={5000} // Velocidade da rolagem contínua
+          autoplay={{
+            delay: 0, // Sem pausas
+            disableOnInteraction: false, // Continua rodando mesmo após interação
+          }}
+          freeMode={true} // Permite rolagem livre, sem "travar" nos slides
+          modules={[Autoplay]}
+          style={{ padding: "20px 0", width: "100vw" }}
+        >
+          {brands.concat(brands).map((src, index) => (
+            <SwiperSlide key={index} style={{ width: "auto" }}>
+              <Image src={src} alt={`Logo ${index}`} width={150} height={75} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Box>
     </Container>
   );
 }
