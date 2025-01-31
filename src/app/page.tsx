@@ -2,16 +2,16 @@
 import { Box, Container } from "@mui/material";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react"; // Faltava importar SwiperSlide
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 
 export default function Home() {
   const brands: string[] = [
     "/brands/bem_bolado.webp",
-    "/brands/cremaria.webp",
     "/brands/la_revolucion.webp",
     "/brands/logo_aleda.webp",
+    "/brands/cremaria.webp",
     "/brands/papelito.webp",
     "/brands/smoking_master.webp",
     "/brands/tatu_do_bem.webp",
@@ -30,24 +30,40 @@ export default function Home() {
 
       <Box mt={6}>
         <Swiper
-          spaceBetween={20}
+          spaceBetween={70}
           slidesPerView="auto"
           loop={true}
-          speed={5000} // Velocidade da rolagem contínua
+          speed={5000}
           autoplay={{
-            delay: 0, // Sem pausas
-            disableOnInteraction: false, // Continua rodando mesmo após interação
+            delay: -1,
+            disableOnInteraction: false,
           }}
-          freeMode={true} // Permite rolagem livre, sem "travar" nos slides
+          freeMode={true}
           modules={[Autoplay]}
-          style={{ padding: "20px 0", width: "100vw" }}
+          style={{
+            padding: "20px 0",
+            width: "96vw",
+            position: "absolute",
+            left: 30,
+            display: "flex",
+            alignItems: "center",
+          }}
         >
           {brands.concat(brands).map((src, index) => (
-            <SwiperSlide key={index} style={{ width: "auto" }}>
+            <SwiperSlide
+              key={index}
+              style={{
+                width: "auto",
+                display: "flex",
+                alignItems: "center", // Alinha verticalmente ao centro
+                justifyContent: "center",
+              }}
+            >
               <Image src={src} alt={`Logo ${index}`} width={150} height={75} />
             </SwiperSlide>
           ))}
         </Swiper>
+
       </Box>
     </Container>
   );
