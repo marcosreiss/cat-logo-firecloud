@@ -8,7 +8,7 @@ export default function Home() {
 
 
   return (
-    <Container>
+    <Container sx={{paddingBottom: 10}}>
       <CatalogoFireCloud />
 
       <Box mb={35}>

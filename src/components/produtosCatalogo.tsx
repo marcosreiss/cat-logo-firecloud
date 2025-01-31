@@ -25,21 +25,45 @@ export default function ProdutosCatalogo({ jsonPath, categoria }: ProdutosCatalo
   }, [jsonPath]);
 
   return (
-    <Box>
+    <Box sx={{ maxWidth: "1200px", mx: "auto", px: { xs: 2, md: 4 } }}>
       {/* Título da categoria */}
-      <Typography variant="h5" fontWeight="bold" mb={2}>
+      <Typography variant="h4" fontWeight="bold" mb={4} textAlign="center">
         {categoria}
       </Typography>
 
       {/* Grid responsivo */}
-      <Grid container spacing={2} p="80px 0">
+      <Grid container spacing={4}>
         {produtos.map((produto, index) => (
-          <Grid item xs={4} sm={6} md={4} key={index}>
-            <Card sx={{ display: "flex", alignItems: "center", p: 2 }}>
-              <Image src={produto.src} alt={produto.nome} width={80} height={80} />
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <Card
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                p: 2,
+                borderRadius: 2,
+                boxShadow: 3,
+                transition: "transform 0.3s, box-shadow 0.3s",
+                // Efeito hover apenas para telas maiores (desktop)
+                "&:hover": {
+                  "@media (min-width:900px)": {
+                    transform: "scale(1.05)",
+                    boxShadow: 6,
+                  },
+                },
+              }}
+            >
+              <Image
+                src={produto.src}
+                alt={produto.nome}
+                width={80}
+                height={80}
+                style={{ borderRadius: "8px" }}
+              />
               <CardContent sx={{ flex: 1, ml: 2 }}>
-                <Typography variant="h6">{produto.nome}</Typography>
-                <Typography variant="body1" color="primary">
+                <Typography variant="h6" fontWeight="medium">
+                  {produto.nome}
+                </Typography>
+                <Typography variant="body1" color="primary" fontWeight="bold" mt={1}>
                   {produto.preco}
                 </Typography>
               </CardContent>
