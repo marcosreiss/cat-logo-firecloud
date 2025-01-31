@@ -20,7 +20,7 @@ const LogoCarrosel = () => {
     return (
         <Box mt={6}>
         <Swiper
-          spaceBetween={70}
+          spaceBetween={80}
           slidesPerView="auto"
           loop={true}
           speed={5000}
@@ -32,11 +32,6 @@ const LogoCarrosel = () => {
           modules={[Autoplay]}
           style={{
             padding: "20px 0",
-            width: "96vw",
-            position: "absolute",
-            left: 30,
-            display: "flex",
-            alignItems: "center",
           }}
         >
           {brands.concat(brands).map((src, index) => (

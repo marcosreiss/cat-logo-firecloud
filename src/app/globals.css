@@ -9,10 +9,14 @@
 }
 
 body {
+  width: 100%;
+  min-height: 100vh;
   background-image: url('../../public/assets/bg_desktop.webp');
-  background-size: cover; /* Faz a imagem cobrir toda a tela */
-  background-position: center; /* Centraliza a imagem */
-  background-repeat: no-repeat; /* Evita que a imagem se repita */
-  background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página (opcional) */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: block; /* Garante que não há grid */
 }
+
 

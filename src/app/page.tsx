@@ -11,7 +11,7 @@ export default function Home() {
     <Container sx={{paddingBottom: 10}}>
       <CatalogoFireCloud />
 
-      <Box mb={35}>
+      <Box mb={5}>
         <LogoCarrosel />
       </Box>
 
