@@ -1,0 +1,18 @@
+[
+    {
+      "src": "/items/item1.webp",
+      "nome": "Produto 1",
+      "preco": "R$ 49,90"
+    },
+    {
+      "src": "/items/item2.webp",
+      "nome": "Produto 2",
+      "preco": "R$ 79,90"
+    },
+    {
+      "src": "/items/item3.webp",
+      "nome": "Produto 3",
+      "preco": "R$ 99,90"
+    }
+  ]
+  
