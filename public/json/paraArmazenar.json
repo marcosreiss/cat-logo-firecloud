@@ -1,18 +1,48 @@
 [
     {
-      "src": "/items/item1.webp",
-      "nome": "Produto 1",
-      "preco": "R$ 49,90"
+      "src": "/products/paraArmazenar/slick_bola_to_na_be.webp",
+      "nome": "Slick Bola To Na Bê",
+      "preco": "R$ 9,90"
     },
     {
-      "src": "/items/item2.webp",
-      "nome": "Produto 2",
-      "preco": "R$ 79,90"
+      "src": "/products/paraArmazenar/slick_redondo.webp",
+      "nome": "Slick redondo",
+      "preco": "R$ 14,90"
     },
     {
-      "src": "/items/item3.webp",
-      "nome": "Produto 3",
-      "preco": "R$ 99,90"
+      "src": "/products/paraArmazenar/ziplock_hermetico_purple_fire.webp",
+      "nome": "Ziplock hermético purple fire",
+      "preco": "R$ 12,90"
+    },
+    {
+      "src": "/products/paraArmazenar/slick_bola_to_na_be.webp",
+      "nome": "Slick Bola To Na Bê",
+      "preco": "R$ 9,90"
+    },
+    {
+      "src": "/products/paraArmazenar/slick_redondo.webp",
+      "nome": "Slick redondo",
+      "preco": "R$ 14,90"
+    },
+    {
+      "src": "/products/paraArmazenar/ziplock_hermetico_purple_fire.webp",
+      "nome": "Ziplock hermético purple fire",
+      "preco": "R$ 12,90"
+    },
+    {
+      "src": "/products/paraArmazenar/slick_bola_to_na_be.webp",
+      "nome": "Slick Bola To Na Bê",
+      "preco": "R$ 9,90"
+    },
+    {
+      "src": "/products/paraArmazenar/slick_redondo.webp",
+      "nome": "Slick redondo",
+      "preco": "R$ 14,90"
+    },
+    {
+      "src": "/products/paraArmazenar/ziplock_hermetico_purple_fire.webp",
+      "nome": "Ziplock hermético purple fire",
+      "preco": "R$ 12,90"
     }
   ]
   

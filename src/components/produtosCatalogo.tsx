@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Paper, Card, CardContent, Typography, Box, Grid } from "@mui/material";
+import { Paper, Card, CardContent, Typography, Box, Grid, useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
 
 interface Produto {
@@ -17,6 +17,12 @@ interface ProdutosCatalogoProps {
 
 export default function ProdutosCatalogo({ jsonPath, categoria }: ProdutosCatalogoProps) {
   const [produtos, setProdutos] = useState<Produto[]>([]);
+  const theme = useTheme();
+  
+  // Responsividade: detecta tamanho da tela
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // < 600px
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md")); // 600px - 960px
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md")); // > 960px
 
   useEffect(() => {
     fetch(jsonPath)
@@ -28,62 +34,59 @@ export default function ProdutosCatalogo({ jsonPath, categoria }: ProdutosCatalo
     <Paper
       elevation={3}
       sx={{
-        p: 4,
-        maxWidth: "1200px",
-        mx: "auto",
+        p: isMobile ? 2 : isTablet ? 3 : 4, // Ajuste do padding conforme o tamanho da tela
+        maxWidth: isMobile ? "100%" : isTablet ? "90%" : "1200px",
+        mx: "auto", // Centraliza o conteúdo
         position: "relative",
         overflow: "hidden",
-        backgroundColor: "rgba(255, 255, 255, 0.7)",
+        backgroundColor: "rgba(255, 255, 255, 0.8)",
       }}
     >
-      {/* Caixa do título no canto superior esquerdo */}
+      {/* Caixa do título */}
       <Box
         sx={{
           position: "absolute",
-          top: 16,
+          top: isMobile ? 12 : 16, // Ajuste de posicionamento
           left: 0,
           backgroundColor: "black",
-          px: 2,
+          px: isMobile ? 1.5 : 2, // Padding reduzido no mobile
           py: 1,
           borderRadius: "0 10px 10px 0",
           zIndex: 1,
         }}
       >
-        <Typography variant="h4" fontWeight="bold" color="white">
+        <Typography variant={isMobile ? "h5" : isTablet ? "h4" : "h3"} fontWeight="bold" color="white">
           {categoria}
         </Typography>
       </Box>
 
-      {/* Conteúdo com margem superior para não ficar escondido atrás do título */}
-      <Box sx={{ mt: 8 }}>
-        <Grid container spacing={4}>
+      {/* Espaçamento extra para evitar sobreposição do título */}
+      <Box sx={{ mt: isMobile ? 8 : isTablet ? 10 : 12 }}>
+        <Grid container spacing={isMobile ? 2 : isTablet ? 3 : 4}>
           {produtos.map((produto, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
               <Card
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  p: 2,
+                  p: isMobile ? 1.5 : isTablet ? 2 : 2.5,
                   borderRadius: 2,
                   boxShadow: 3,
                   transition: "transform 0.3s, box-shadow 0.3s",
                   "&:hover": {
-                    "@media (min-width:900px)": {
-                      transform: "scale(1.05)",
-                      boxShadow: 6,
-                    },
+                    ...(isDesktop ? { transform: "scale(1.05)", boxShadow: 6 } : {}), // Hover apenas no desktop
                   },
                 }}
               >
                 <Image
                   src={produto.src}
                   alt={produto.nome}
-                  width={80}
-                  height={80}
+                  width={isMobile ? 60 : isTablet ? 70 : 80}
+                  height={isMobile ? 60 : isTablet ? 70 : 80}
                   style={{ borderRadius: "8px" }}
                 />
-                <CardContent sx={{ flex: 1, ml: 2 }}>
-                  <Typography variant="h6" fontWeight="medium">
+                <CardContent sx={{ flex: 1, ml: isMobile ? 1 : 2 }}>
+                  <Typography variant={isMobile ? "body1" : "h6"} fontWeight="medium">
                     {produto.nome}
                   </Typography>
                   <Typography variant="body1" color="primary" fontWeight="bold" mt={1}>
