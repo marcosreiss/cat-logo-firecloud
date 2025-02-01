@@ -1,0 +1,42 @@
+[
+    {
+        "src": "/products/sedas/sabotage.webp",
+        "nome": "Sabotage",
+        "preco": "R$ 8,00"
+    },
+    {
+        "src": "/products/sedas/smoking_master.webp",
+        "nome": "Smoking Master",
+        "preco": "R$ 10,00"
+    },
+    {
+        "src": "/products/sedas/bem_bolado_king_size_slim.webp",
+        "nome": "Bem bolado King Size Slim",
+        "preco": "R$ 6,50"
+    },
+    {
+        "src": "/products/sedas/tatu_do_bem_king_size_slim.webp",
+        "nome": "Tatu do Bem King Size Slim",
+        "preco": "R$ 7,00"
+    },
+    {
+        "src": "/products/sedas/tatu_do_bem_brown.webp",
+        "nome": "Tatu do Bem Brown",
+        "preco": "R$ 8,00"
+    },
+    {
+        "src": "/products/sedas/smk_ultra_fine.webp",
+        "nome": "SMK Ultra Fine",
+        "preco": "R$ 7,00"
+    },
+    {
+        "src": "/products/sedas/seda_de_vidro_sessaozada.webp",
+        "nome": "Seda de Vidro Sessãozada",
+        "preco": "R$ 17,00"
+    },
+    {
+        "src": "/products/sedas/bem_bolado_marcelo_d2.webp",
+        "nome": "Bem Bolado Marcelo D2",
+        "preco": "R$ 5,50"
+    }
+]

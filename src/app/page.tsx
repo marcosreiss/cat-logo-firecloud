@@ -13,7 +13,7 @@ export default function Home() {
 
       <LogoCarrosel />
 
-      <ProdutosCatalogo categoria="Para Armazenar" jsonPath="/json/paraArmazenar.json" />
+      <ProdutosCatalogo categoria="📦 Para Armazenar" jsonPath="/json/paraArmazenar.json" />
 
     </Box>
   );
