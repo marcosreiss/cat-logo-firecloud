@@ -36,7 +36,7 @@ export default function ProdutosCatalogo({ jsonPath, categoria }: ProdutosCatalo
       sx={{
         p: isMobile ? 2 : isTablet ? 3 : 4, // Ajuste do padding conforme o tamanho da tela
         maxWidth: isMobile ? "100%" : isTablet ? "90%" : "1200px",
-        mx: "auto", // Centraliza o conteúdo
+        mx: isMobile? 2 : isTablet ? 10 : "auto", // Centraliza o conteúdo
         position: "relative",
         overflow: "hidden",
         backgroundColor: "rgba(255, 255, 255, 0.8)",
