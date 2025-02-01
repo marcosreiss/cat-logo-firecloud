@@ -8,7 +8,8 @@ import Image from "next/image";
 
 const LogoCarrosel = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Detecta telas menores que 600px
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // <600px
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md")); // 600px - 960px
 
   const brands: string[] = [
     "/brands/logo_papelito.webp",
@@ -29,17 +30,17 @@ const LogoCarrosel = () => {
         alignItems: "center",
         justifyContent: "center",
         margin: "50px auto",
-        paddingLeft: isMobile ? 2 : 6, // Reduz padding lateral em telas menores
+        paddingLeft: isMobile ? 2 : 6, // Padding lateral ajustado
         paddingRight: isMobile ? 2 : 6,
       }}
     >
       <Swiper
-        spaceBetween={isMobile ? 30 : 50} // Ajusta espaço entre os logos no mobile
-        slidesPerView={isMobile ? 3 : 5} // Mostra menos logos em telas pequenas
+        spaceBetween={isMobile ? 20 : isTablet ? 40 : 50} // Ajusta espaço entre os logos conforme a tela
+        slidesPerView={isMobile ? 3 : isTablet ? 4 : 5} // Mostra mais logos em telas médias
         loop={true}
         speed={5000}
         autoplay={{
-          delay: -1,
+          delay: 1,
           disableOnInteraction: false,
         }}
         freeMode={true}
@@ -54,11 +55,18 @@ const LogoCarrosel = () => {
             style={{
               width: "auto",
               display: "flex",
-              alignItems: "center", // Alinha verticalmente ao centro
+              alignItems: "center",
               justifyContent: "center",
             }}
           >
-            <Image src={src} alt={`Logo ${index}`} width={isMobile ? 100 : 150} height={isMobile ? 50 : 75} />
+            <Image
+              src={src}
+              alt={`Logo ${index}`}
+              width={isMobile ? 80 : isTablet ? 120 : 100} // Ajusta tamanho da imagem
+              height={isMobile ? 40 : isTablet ? 60 : 50}
+              style={{ width: "auto", height: "auto" }} // Mantém proporção
+              priority // Carregamento prioritário para evitar LCP delay
+            />
           </SwiperSlide>
         ))}
       </Swiper>
