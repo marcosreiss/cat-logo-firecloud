@@ -3,6 +3,7 @@ import CatalogoFireCloud from "@/components/catalogoFireCloud";
 import LogoCarrosel from "@/components/logoCarrosel";
 import ProdutosCatalogo from "@/components/produtosCatalogo";
 import Sidebar from "@/components/Sidebar";
+import SocialButtons from "@/components/SocialButtons";
 import { Box } from "@mui/material";
 
 export default function Home() {
@@ -13,6 +14,12 @@ export default function Home() {
       <Sidebar />
 
       <CatalogoFireCloud />
+
+      <SocialButtons 
+        whatsapp="https://wa.me/5598989145050?text=Olá,%20gostaria%20de%20mais%20informações!" 
+        instagram="https://www.instagram.com/firecloudslz/"
+        location="https://maps.app.goo.gl/rHcHmXTZKKAeNAU37"
+      />
 
       <LogoCarrosel />
 

@@ -17,6 +17,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed; /* Fixa a imagem de fundo no desktop */
   display: block;
+  background-color: black;
 }
 
 /* 📱 Mobile (telas menores que 600px) */
