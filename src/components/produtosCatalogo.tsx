@@ -58,7 +58,7 @@ export default function ProdutosCatalogo({ jsonPath, categoria, id }: ProdutosCa
           zIndex: 1,
         }}
       >
-        <Typography variant={isMobile ? "h5" : isTablet ? "h4" : "h3"} fontWeight="bold" color="white">
+        <Typography variant={isMobile ? "h5" : isTablet ? "h4" : "h3"} fontSize={25} fontWeight="bold" color="white">
           {categoria}
         </Typography>
       </Box>
