@@ -40,6 +40,7 @@ export default function ProdutosCatalogo({ jsonPath, categoria }: ProdutosCatalo
         position: "relative",
         overflow: "hidden",
         backgroundColor: "rgba(255, 255, 255, 0.8)",
+        marginBottom: 3
       }}
     >
       {/* Caixa do título */}

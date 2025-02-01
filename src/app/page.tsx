@@ -13,7 +13,14 @@ export default function Home() {
 
       <LogoCarrosel />
 
-      <ProdutosCatalogo categoria="📦 Para Armazenar" jsonPath="/json/paraArmazenar.json" />
+      <ProdutosCatalogo categoria="🎒 Para Armazenar" jsonPath="/json/paraArmazenar.json" />
+      <ProdutosCatalogo categoria="🥣 Cuias" jsonPath="/json/cuias.json" />
+      <ProdutosCatalogo categoria="📜 Sedas" jsonPath="/json/sedas.json" />
+      <ProdutosCatalogo categoria="🔹 Piteiras" jsonPath="/json/piteiras.json" />
+      <ProdutosCatalogo categoria="🌿 Tabaco" jsonPath="/json/tabaco.json" />
+      <ProdutosCatalogo categoria="✂️ Tesouras" jsonPath="/json/tesouras.json" />
+      <ProdutosCatalogo categoria="🔥 Isqueiros" jsonPath="/json/isqueiros.json" />
+      <ProdutosCatalogo categoria="🗑️ Cinzeiros" jsonPath="/json/cinzeiros.json" />
 
     </Box>
   );
