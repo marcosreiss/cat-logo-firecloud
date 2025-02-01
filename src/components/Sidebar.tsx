@@ -16,7 +16,7 @@ const Sidebar = () => {
       }, 2000); // Remove o destaque após 2 segundos
     }
   };
-  
+
 
   // Função para rolar até a seção específica
   const scrollToSection = (id: string) => {
@@ -27,21 +27,34 @@ const Sidebar = () => {
       setOpen(false); // Fecha a Sidebar após clicar
     }
   };
-  const botões = 
-  [
-    { text: "Para Armazenar", icon: <Backpack />, id: "armazenar" },
-    { text: "Cuias", icon: <RiceBowl />, id: "cuias" },
-    { text: "Sedas", icon: <Receipt />, id: "sedas" },
-    { text: "Piteiras", icon: <SmokingRoomsRounded />, id: "piteiras" },
-    { text: "Tesouras", icon: <ContentCut />, id: "tesouras" },
-    { text: "Isqueiros", icon: <Whatshot />, id: "isqueiros" },
-    { text: "Cinzeiros", icon: <Delete />, id: "cinzeiros" },
-  ]
+  const botões =
+    [
+      { text: "Para Armazenar", icon: <Backpack />, id: "armazenar" },
+      { text: "Cuias", icon: <RiceBowl />, id: "cuias" },
+      { text: "Sedas", icon: <Receipt />, id: "sedas" },
+      { text: "Piteiras", icon: <SmokingRoomsRounded />, id: "piteiras" },
+      { text: "Tesouras", icon: <ContentCut />, id: "tesouras" },
+      { text: "Isqueiros", icon: <Whatshot />, id: "isqueiros" },
+      { text: "Cinzeiros", icon: <Delete />, id: "cinzeiros" },
+    ]
 
   return (
     <>
       {/* Botão de Menu */}
-      <IconButton onClick={() => setOpen(true)} sx={{ position: "fixed", top: 20, left: 20 }}>
+      <IconButton onClick={() => setOpen(true)} sx={
+        {
+          position: "fixed",
+          top: 0,
+          left: 0,
+          zIndex: 10,
+          backgroundColor: 'black',
+          color: 'white',
+          borderRadius: '0 0 20px 0',
+          transition: "background-color 0.3s ease",
+          ":hover": {
+            backgroundColor: '#181818'
+          }
+        }}>
         <Menu fontSize="large" />
       </IconButton>
 

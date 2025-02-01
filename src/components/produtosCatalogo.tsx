@@ -20,7 +20,7 @@ export default function ProdutosCatalogo({ jsonPath, categoria, id }: ProdutosCa
   const [produtos, setProdutos] = useState<Produto[]>([]);
   const theme = useTheme();
   
-  // Responsividade: detecta tamanho da tela
+  // Responsividade
   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // < 600px
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md")); // 600px - 960px
   const isDesktop = useMediaQuery(theme.breakpoints.up("md")); // > 960px
@@ -36,23 +36,23 @@ export default function ProdutosCatalogo({ jsonPath, categoria, id }: ProdutosCa
       id={id}
       elevation={3}
       sx={{
-        p: isMobile ? 2 : isTablet ? 3 : 4, // Ajuste do padding conforme o tamanho da tela
+        p: isMobile ? 2 : isTablet ? 3 : 4,
         maxWidth: isMobile ? "100%" : isTablet ? "90%" : "1200px",
-        mx: isMobile? 2 : isTablet ? 10 : "auto", // Centraliza o conteúdo
+        mx: isMobile ? 2 : isTablet ? 10 : "auto",
         position: "relative",
         overflow: "hidden",
         backgroundColor: "rgba(255, 255, 255, 0.8)",
         marginBottom: 3
       }}
     >
-      {/* Caixa do título */}
+      {/* Título da categoria */}
       <Box
         sx={{
           position: "absolute",
-          top: isMobile ? 12 : 16, // Ajuste de posicionamento
+          top: isMobile ? 12 : 16,
           left: 0,
           backgroundColor: "black",
-          px: isMobile ? 1.5 : 2, // Padding reduzido no mobile
+          px: isMobile ? 1.5 : 2,
           py: 1,
           borderRadius: "0 10px 10px 0",
           zIndex: 1,
@@ -67,29 +67,31 @@ export default function ProdutosCatalogo({ jsonPath, categoria, id }: ProdutosCa
       <Box sx={{ mt: isMobile ? 8 : isTablet ? 10 : 12 }}>
         <Grid container spacing={isMobile ? 2 : isTablet ? 3 : 4}>
           {produtos.map((produto, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
               <Card
                 sx={{
                   display: "flex",
+                  flexDirection: "column", // Coloca a imagem acima do texto
                   alignItems: "center",
-                  p: isMobile ? 1.5 : isTablet ? 2 : 2.5,
-                  height: isMobile ? 100 : isTablet ? 140 : 160,
+                  justifyContent: "center",
+                  p: isMobile ? 2 : isTablet ? 2.5 : 3,
+                  height: isMobile ? 250 : isTablet ? 250 : 350,
                   borderRadius: 2,
                   boxShadow: 3,
                   transition: "transform 0.3s, box-shadow 0.3s",
                   "&:hover": {
-                    ...(isDesktop ? { transform: "scale(1.05)", boxShadow: 6 } : {}), // Hover apenas no desktop
+                    ...(isDesktop ? { transform: "scale(1.05)", boxShadow: 6 } : {}),
                   },
                 }}
               >
+                {/* Imagem do produto (maior e centralizada) */}
                 <Image
                   src={produto.src}
                   alt={produto.nome}
-                  width={isMobile ? 60 : isTablet ? 70 : 80}
-                  height={isMobile ? 60 : isTablet ? 70 : 80}
-                  style={{ borderRadius: "8px" }}
+                  width={isMobile ? 120 : isTablet ? 140 : 160}
+                  height={isMobile ? 120 : isTablet ? 140 : 160}
                 />
-                <CardContent sx={{ flex: 1, ml: isMobile ? 1 : 2 }}>
+                <CardContent sx={{ textAlign: "center", width: "100%" }}>
                   <Typography variant={isMobile ? "body1" : "h6"} fontWeight="medium">
                     {produto.nome}
                   </Typography>
