@@ -13,9 +13,10 @@ interface Produto {
 interface ProdutosCatalogoProps {
   jsonPath: string;
   categoria: string;
+  id: string;
 }
 
-export default function ProdutosCatalogo({ jsonPath, categoria }: ProdutosCatalogoProps) {
+export default function ProdutosCatalogo({ jsonPath, categoria, id }: ProdutosCatalogoProps) {
   const [produtos, setProdutos] = useState<Produto[]>([]);
   const theme = useTheme();
   
@@ -32,6 +33,7 @@ export default function ProdutosCatalogo({ jsonPath, categoria }: ProdutosCatalo
 
   return (
     <Paper
+      id={id}
       elevation={3}
       sx={{
         p: isMobile ? 2 : isTablet ? 3 : 4, // Ajuste do padding conforme o tamanho da tela
