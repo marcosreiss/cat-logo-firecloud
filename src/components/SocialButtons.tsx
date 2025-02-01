@@ -21,7 +21,7 @@ const SocialButtons = ({ whatsapp, instagram, location }: SocialButtonsProps) =>
       sx={{
         position: "fixed",
         bottom: 20,
-        right: 5,
+        right: isMobile ? 5 : 20,
         display: "flex",
         flexDirection: "column",
         gap: isMobile ? 1 : 1.5, // Reduz espaçamento no mobile
