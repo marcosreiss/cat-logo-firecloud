@@ -19,4 +19,14 @@ body {
   display: block; /* Garante que não há grid */
 }
 
+/* 📱 Estilos para Mobile (telas menores que 600px) */
+@media screen and (max-width: 600px) {
+  
+}
 
+/* 📟 Estilos para Tablet (entre 600px e 960px) */
+@media screen and (min-width: 600px) and (max-width: 960px) {
+  body{
+    background-image: url('../../public/assets/bg.webp');
+  }
+}
