@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,18 +15,27 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  display: block; /* Garante que não há grid */
+  background-attachment: fixed; /* Fixa a imagem de fundo no desktop */
+  display: block;
 }
 
-/* 📱 Estilos para Mobile (telas menores que 600px) */
+/* 📱 Mobile (telas menores que 600px) */
 @media screen and (max-width: 600px) {
-  
+  body {
+    background-image: url('../../public/assets/bg.webp'); /* Imagem específica para mobile */
+    background-size: cover;
+    background-position: center;
+    background-attachment: local; /* Impede o fundo de se mover com a barra inferior */
+    min-height: -webkit-fill-available; /* Preenche toda a altura da tela no iOS */
+  }
 }
 
-/* 📟 Estilos para Tablet (entre 600px e 960px) */
+/* 📟 Tablet (entre 600px e 960px) */
 @media screen and (min-width: 600px) and (max-width: 960px) {
-  body{
+  body {
     background-image: url('../../public/assets/bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 }
