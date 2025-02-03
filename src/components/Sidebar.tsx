@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, IconButton } from "@mui/material";
-import { Menu, Backpack, RiceBowl, Receipt, SmokingRoomsRounded, ContentCut, Whatshot, Delete } from "@mui/icons-material";
+import { Menu, Backpack, RiceBowl, Receipt, SmokingRoomsRounded, ContentCut, Whatshot, Delete, KeyboardArrowRight } from "@mui/icons-material";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
@@ -36,6 +36,7 @@ const Sidebar = () => {
       { text: "Tesouras", icon: <ContentCut />, id: "tesouras" },
       { text: "Isqueiros", icon: <Whatshot />, id: "isqueiros" },
       { text: "Cinzeiros", icon: <Delete />, id: "cinzeiros" },
+      { text: "Bandejas", icon: <KeyboardArrowRight />, id: "bandejas" },
     ]
 
   return (

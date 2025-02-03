@@ -8,5 +8,10 @@
         "src": "/products/cuias/cuia_mr_baba.webp",
         "nome": "Cuia Mr Baba",
         "preco": "R$ 18,00"
+    },
+    {
+        "src": "/products/cuias/cuia_cremaria.webp",
+        "nome": "Cuia Cremaria",
+        "preco": "R$ 18,00"
     }
 ]

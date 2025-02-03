@@ -31,6 +31,7 @@ export default function Home() {
       <ProdutosCatalogo id="tesouras" categoria="✂️ Tesouras" jsonPath="/json/tesouras.json" />
       <ProdutosCatalogo id="isqueiros" categoria="🔥 Isqueiros" jsonPath="/json/isqueiros.json" />
       <ProdutosCatalogo id="cinzeiros" categoria="🗑️ Cinzeiros" jsonPath="/json/cinzeiros.json" />
+      <ProdutosCatalogo id="bandejas" categoria="📥 Bandejas" jsonPath="/json/bandejas.json" />
 
     </Box>
   );
